@@ -1,0 +1,131 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E7E7E7"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#5A70E6">
+
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="30dp"
+            android:textSize="30sp"
+            android:textColor="#ffffff"
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="введите город" />
+
+        <EditText
+            android:id="@+id/findCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/header_title"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="имя города"
+            android:inputType="text"
+            android:minHeight="48dp" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/findCity"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@id/findCity"
+            android:onClick="start"
+            android:text="find" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/mainBox"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_above="@+id/footer"
+        >
+
+
+        <TextView
+            android:id="@+id/weatherCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif-black"
+            android:textSize="20sp"
+            android:textColor="#000000"/>
+        <TextView
+            android:fontFamily="sans-serif-black"
+            android:id="@+id/weatherTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:layout_below="@+id/weatherCountry"
+            android:maxWidth="260dp"
+            android:textColor="#000000"/>
+        <TextView
+            android:fontFamily="sans-serif-black"
+            android:id="@+id/weatherOther"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:layout_below="@+id/weatherTemp"
+            android:maxWidth="260dp"
+            android:textColor="#000000"/>
+
+
+
+        <TextView
+            android:fontFamily="sans-serif-black"
+            android:id="@+id/weatherDiscp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            android:layout_below="@+id/weatherOther"
+            android:maxWidth="260dp"
+            android:textColor="#18204E"/>
+
+        <ImageView
+            android:id="@+id/WeatherImage"
+            android:layout_width="120dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="10dp" />
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#5A70E6"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="100dp"
+            android:layout_height="45dp"
+
+            app:srcCompat="@drawable/github_mark" />
+    </LinearLayout>
+
+
+
+</RelativeLayout>
