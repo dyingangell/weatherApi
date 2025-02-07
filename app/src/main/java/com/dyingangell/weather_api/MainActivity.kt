@@ -34,7 +34,13 @@ class MainActivity : AppCompatActivity() {
 
 
         button.setOnClickListener {
-            start(image,plainText, title, textCountry, textTemp, textOther, textDiscp)
+            if(!plainText.text.isNullOrBlank()){
+                start(image,plainText, title, textCountry, textTemp, textOther, textDiscp)
+                title.text = "Worked!"
+            } else{
+                title.text = "enter city"
+            }
+
         }
         val imageView: ImageView = findViewById(R.id.imageView)
         imageView.setOnClickListener {
