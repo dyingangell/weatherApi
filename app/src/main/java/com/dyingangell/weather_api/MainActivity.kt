@@ -1,6 +1,8 @@
 package com.dyingangell.weather_api
 
 import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -34,6 +36,12 @@ class MainActivity : AppCompatActivity() {
         button.setOnClickListener {
             start(image,plainText, title, textCountry, textTemp, textOther, textDiscp)
         }
+        val imageView: ImageView = findViewById(R.id.imageView)
+        imageView.setOnClickListener {
+            val url = "https://github.com/dyingangell"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        }
     }
 
 
@@ -46,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         textOther: TextView,
         textDiscp: TextView
     ) {
-        val apiKey = "enter ur api"  // Замените на свой API ключ
+        val apiKey = "71489f13797249fcaff234802250302"  // Замените на свой API ключ
         val location = plainText.text.toString()
 
         GlobalScope.launch(Dispatchers.Main) {
@@ -61,8 +69,8 @@ class MainActivity : AppCompatActivity() {
                     val imageurl = "//cdn.weatherapi.com/weather/64x64/night/116.png"
                     Glide.with(this@MainActivity)
                         .load(imageurl)
-                        .diskCacheStrategy(DiskCacheStrategy.NONE) // Отключаем кеширование
-                        .skipMemoryCache(true) // Пропускаем кеширование в памяти
+                        .diskCacheStrategy(DiskCacheStrategy.NONE) 
+                        .skipMemoryCache(true)
                         .into(image)
 
 
